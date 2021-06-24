@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: vault://secret/database/test_user
+  datasource:
+    username: ${datasource.username}
+    password: ${datasource.password}
+    url: ${datasource.url}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    prefix: classpath:/templates/
+logging:
+  level:
+    com.example.webstore.dao: DEBUG

@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: test
+  application:
+    name: vault-example
+  cloud:
+    config:
+      profile: test
+    vault:
+      enabled: true
+      host: XXX
+      port: 443
+      scheme: https
+      #      ssl:
+      #        trust-store: classpath:keystore.jks
+      #        trust-store-password: decathlon.
+      connection-timeout: 5000
+      read-timeout: 15000
+      authentication: approle
+      #token: s.0hMlExNlK2IXRiBUcVDI4RBX
+      app-role:
+        role-id: XXX
+        secret-id: XXX
+        app-auth-path: XXX
+        #spring.cloud.vault.kv.default-context=
+      generic:
+        application-name:XXXX
+        default-context: #sfc/${spring.application.name}
+      kv:
+        enabled: true
+        application-name: XXX
+        default-context: #sfc/${spring.application.name}
